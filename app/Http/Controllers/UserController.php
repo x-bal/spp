@@ -55,7 +55,7 @@ class UserController extends Controller
         if ($request->input('password') == null) {
             $attr['password'] = $user->password;
         } else {
-            $attr['password'] = $request->input('password');
+            $attr['password'] = \Hash::make($request->input('password'));
         }
 
         $user->update($attr);
