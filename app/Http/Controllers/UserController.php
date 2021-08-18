@@ -27,6 +27,8 @@ class UserController extends Controller
             'level' => 'required',
         ]);
 
+        $attr['password'] = \Hash::make($request->input('password'));
+
         User::create($attr);
 
         return redirect()->route('users.index')->with('success', 'Data User berhasil ditambahkan');
