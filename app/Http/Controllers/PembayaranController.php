@@ -50,7 +50,7 @@ class PembayaranController extends Controller
             'jumlah_bayar' => 'required',
         ]);
 
-        $attr['invoice'] = "INV" . date('dmY') . rand(100, 999);
+        $attr['invoice'] = "INV/" . date('dmY') . rand(100, 999);
         $attr['tanggal_bayar'] = date("Y-m-d");
         $attr['user_id'] = auth()->user()->id;
         $attr['status'] = 'Lunas';
